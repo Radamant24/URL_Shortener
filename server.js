@@ -37,7 +37,7 @@ mongodb.MongoClient.connect(uri, function(err, db) {
         else res.send('No such URL in the database');
       
   });
-      //if (redirectTo) res.redirect(redirectTo);
+      
 
   })
 
