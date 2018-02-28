@@ -43,9 +43,33 @@
         text-align:center;
         margin-left:64px;
         }
-  
+    
+input[type=text] {
+    display: block;
+    margin : 0 auto;
+    width: 50%;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+input[type=text]:focus {
+    border: 3px solid #5FAA;
+}
+button{
+    display: block;
+    margin :  auto;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 48px;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
     
   </style>
+ 
 
   <meta charset="utf-8">
 
@@ -55,16 +79,19 @@
   
   
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+ 
 </head>
 
 <body>
   <h1>URL Shortener</h1>
   <h2>Usage: </h2>
-  <h3>Shorten URL:     https://shrtr.glitch.me/new/"URL" </h3>
-  <p>Example:  https://shrtr.glitch.me/new/https://www.youtube.com/watch?v=16a1LttU5qc </p>
+  <h3>Shorten URL:</h3>
+  <p>Example: https://www.google.com</p>
+  <div class="urlform">
+    <input type="text" id="url">
+    <button id="submit">Shorten</button>
+  </div>
+  
   <h3>Access short URL:     https://shrtr.glitch.me/"Short-URL" </h3>
   <p>Example:  https://shrtr.glitch.me/rJWK1T3rz</p>
   
@@ -73,4 +100,20 @@
   </h4>
   
 </body>
+  
+  
+  
+  
+   <script>
+  const input = document.querySelector("#url")
+  const button = document.querySelector("#submit")
+
+  function redirect() {
+    window.open(`https://shrtr.glitch.me/new/${input.value}`)
+  }
+
+  button.addEventListener("click", redirect);
+
+
+  </script>
 </html>
